@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include BCrypt
 
+  has_many :bookmarks
+
   before_save :encrypt_password
 
   attr_accessor :password

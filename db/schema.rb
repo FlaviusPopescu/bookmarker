@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130629194127) do
+ActiveRecord::Schema.define(version: 20130630025633) do
+
+  create_table "bookmarks", force: true do |t|
+    t.string   "path"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "sites", force: true do |t|
+    t.string   "protocol"
+    t.string   "host"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string "email"
