@@ -2,13 +2,8 @@ require 'spec_helper'
 
 feature 'User signs in' do
 
-  let(:user) { Fabricate :user, password: 'secret', email: 'test@dragon.com' }
-
   scenario 'with proper credentials' do
-    visit root_path
-    fill_in :email, with: user.email
-    fill_in :password, with: 'secret'
-    click_button 'Sign in'
+    sign_in
 
     expect(page).to have_content('Sign out')
   end
