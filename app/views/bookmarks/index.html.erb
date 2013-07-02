@@ -1,3 +1,5 @@
+<%= link_to 'New bookmark', new_bookmark_path %>
+
 <ul id='bookmarks'>
   <% bookmarks.each do |bookmark| %>
     <li><%=bookmark.site.host%> | <%=bookmark.path%></li>
