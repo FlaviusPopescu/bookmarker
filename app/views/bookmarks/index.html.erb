@@ -1,5 +1,10 @@
 <ul id='bookmarks'>
   <% bookmarks.each do |bookmark| %>
     <li><%=bookmark.site.host%> | <%=bookmark.path%></li>
+    <ul>
+    <% bookmark.tags.each do |tag| %>
+      <li><%= tag.title %></li>
+    <% end %>
+    </ul>
   <% end %>
 </ul>
