@@ -1,0 +1,58 @@
+$base-color: #FFA500;
+$tags: #92CD00;
+$border: #E5E4D7;
+$casual: #6599FF;
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+input {
+  min-width: 380px;
+  margin: 6px 6px;
+}
+
+input#search_tags {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+input[type='hidden'] {
+  width: 0px;
+  height: 0px;
+}
+
+
+form {
+  width: 600px;
+}
+
+ul#tag_bookmarks {
+  min-height: 0px;
+  width: 388px;
+  list-style: none;
+  margin-left: 6px;
+  padding-left: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+li { background: $base-color; }
+
+li:hover { background-color: darken($base-color, 10%); }
+
+div#selected_tags {
+  width: 388px;
+  background-color: $casual;
+  padding: 6px 0px;
+  margin-left: 6px;
+}
+
+div#selected_tags > p {
+  display: inline-block;
+  background-color: $tags;
+  padding: 0px 6px;
+  margin: 3px 3px;
+  border: 1px solid $border;
+}

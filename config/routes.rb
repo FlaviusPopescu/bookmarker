@@ -5,6 +5,7 @@ Bookmarker::Application.routes.draw do
 
   resources :sessions, only: :create
   resources :bookmarks
+  resources :tags
 
   root to: 'bookmarks#index'
 end

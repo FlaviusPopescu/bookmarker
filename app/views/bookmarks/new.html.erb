@@ -1,4 +1,10 @@
-<%= form_for bookmark do |f| %>
+<%= form_for bookmark  do |f| %>
   <%= f.text_field :bookmark, placeholder: 'Paste your bookmark', id: 'new_bookmark' %>
+  <%= text_field_tag :search_tags, nil, placeholder: 'Search or add tag', autocomplete: 'off' %>
+  <%= f.text_field :tag_tokens, type: :hidden %>
+  <ul id='tag_bookmarks'></ul>
+  <div id='selected_tags'>
+    <%= f.label :tags %>
+  </div>
   <%= f.submit %>
 <% end %>

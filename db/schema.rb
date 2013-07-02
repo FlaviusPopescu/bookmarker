@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130630025633) do
+ActiveRecord::Schema.define(version: 20130630134308) do
 
   create_table "bookmarks", force: true do |t|
     t.string   "path"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20130630025633) do
   create_table "sites", force: true do |t|
     t.string   "protocol"
     t.string   "host"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "bookmark_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -29,7 +29,7 @@ class BookmarksController < ApplicationController
   end
 
   def permited_params
-    params.require(:bookmark).permit(:bookmark, :user_id)
+    params.require(:bookmark).permit(:bookmark, :user_id, :tag_tokens)
   end
 
 end

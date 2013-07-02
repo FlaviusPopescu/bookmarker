@@ -2,10 +2,16 @@ class Bookmark < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :site
+  has_many :taggings
+  has_many :tags, through: :taggings
 
-  attr_accessor :bookmark
+  attr_accessor :bookmark, :tag_tokens
 
   before_save :find_or_create_site, :set_path
+
+  def tag_tokens=(tokens)
+    self.tag_ids = Tag.ids_from_tokens(tokens)
+  end
 
   private
 
