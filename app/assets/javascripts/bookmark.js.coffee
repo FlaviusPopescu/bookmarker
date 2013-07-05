@@ -33,5 +33,10 @@ jQuery ->
       addTag $(this)
 
   addTag = (element) ->
-    $('div#selected_tags').append('<p>' + element.html() + '</p>')
-    $('input#bookmark_tag_tokens').val( $('input#bookmark_tag_tokens').val() + element.attr('id') + ',')
+    $('div#selected_tags').append('<p id="' + element[0]['id'] + '">' + element.html() + '<span class="remove">x</span></p>')
+    $('input#bookmark_tag_tokens').val($('input#bookmark_tag_tokens').val() + element.attr('id') + ',')
+
+    $('p > span.remove').click ->
+      valueToReplace = $(this).parent()[0]['id'] + ','
+      $('input#bookmark_tag_tokens').val($('input#bookmark_tag_tokens').val().replace(valueToReplace, ''))
+      $(this).parent().remove()

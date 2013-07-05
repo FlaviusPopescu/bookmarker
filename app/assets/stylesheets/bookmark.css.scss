@@ -1,16 +1,29 @@
 $base-color: #FFA500;
-$tags: #92CD00;
+$secondary: #097054;
 $border: #E5E4D7;
 $casual: #6599FF;
+$aura: #FFDE00;
 
 body {
   margin: 0px;
   padding: 0px;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  color: $secondary;
 }
 
 input {
+  color: $secondary;
+  font-size: 100%;
+}
+
+input[type='text'] {
   min-width: 380px;
   margin: 6px 6px;
+  border: 5px solid white;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  font-size: 100%;
+  text-align: center;
 }
 
 input#search_tags {
@@ -30,7 +43,7 @@ form {
 
 ul#tag_bookmarks {
   min-height: 0px;
-  width: 388px;
+  width: 391px;
   list-style: none;
   margin-left: 6px;
   padding-left: 0px;
@@ -38,23 +51,32 @@ ul#tag_bookmarks {
   margin-top: 0px;
 }
 
-li { background: $base-color; }
+li { background: white; }
 
-li:hover { background-color: darken($base-color, 10%); }
+li:hover { background-color: $base-color; }
 
 div#selected_tags {
-  width: 388px;
+  position: absolute;
+  width: 800px;
   background-color: $casual;
-  padding: 6px 0px;
-  margin-left: 6px;
+  margin-top: 615px;
+  margin-left: -100px;
+  height: 80px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border: 2px solid $aura;
 }
 
 div#selected_tags > p {
+  min-width: 180px;
+  text-align: center;
   display: inline-block;
-  background-color: $tags;
+  background-color: $aura;
   padding: 0px 6px;
   margin: 3px 3px;
   border: 1px solid $border;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 form#new_bookmark {
@@ -64,4 +86,49 @@ form#new_bookmark {
   left:50%;
   top:50%;
   margin:-100px 0 0 -200px;
+}
+
+div#main {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  margin: -330px 0 0 -300px;
+  background-color: $casual;
+  border-radius: 300px;
+  border: 2px solid $aura;
+}
+
+input#create_bookmark {
+  background-color: $aura;
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  left: 50%;
+  margin-left: -40px;
+  top: 240px;
+  border: none;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+input#create_bookmark:hover {
+  background-color: darken($aura, 10%);
+}
+
+span#bookmarker {
+  position: absolute;
+  width: 50px;
+  top: 20%;
+  left: 50%;
+  margin-left: -50px;
+}
+
+span.remove {
+  display: inline-block;
+  position: relative;
+  float: right;
+  text-align: right;
+  font-size: 80%;
 }

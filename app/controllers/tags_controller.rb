@@ -8,7 +8,7 @@ class TagsController < ApplicationController
   private
 
   def tags
-    @tags = Tag.order_by_title
+    @tags = Tag.order_by_title.limit(5)
   end
 
 end
