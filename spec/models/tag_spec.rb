@@ -15,7 +15,7 @@ describe Tag do
     end
 
     it 'retrieves tags plus new tag hash when there is an exact match' do
-      new_tag = { id: '<<<boo>>>', title: 'New tag: "boo"' }
+      new_tag = { id: '<<<boo>>>', title: 'New: "boo"' }
       described_class.stub(where: [tag1, tag2])
       tags = [new_tag, tag1, tag2]
 

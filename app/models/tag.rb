@@ -11,7 +11,7 @@ class Tag < ActiveRecord::Base
     if tags.map(&:title).include?(query)
       tags
     else
-      tags.unshift({id: "<<<#{query}>>>", title: "New tag: \"#{query}\""})
+      tags.unshift({id: "<<<#{query}>>>", title: "New: \"#{query}\""})
     end
   end
 
