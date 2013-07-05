@@ -7,10 +7,11 @@ class Tag < ActiveRecord::Base
 
   def self.tokens(query)
     tags = where("title like ?", "%#{query}%")
-    if tags.empty?
-      [{id: "<<<#{query}>>>", title: "New tag: \"#{query}\""}]
-    else
+
+    if tags.map(&:title).include?(query)
       tags
+    else
+      tags.unshift({id: "<<<#{query}>>>", title: "New tag: \"#{query}\""})
     end
   end
 
