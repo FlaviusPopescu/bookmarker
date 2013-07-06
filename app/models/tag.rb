@@ -4,9 +4,10 @@ class Tag < ActiveRecord::Base
   has_many :bookmarks, through: :taggings
 
   scope :order_by_title, -> { order(:title) }
+  scope :where_title_like, -> (query) { where("title like ?", "%#{query}%") }
 
   def self.tokens(query)
-    tags = where("title like ?", "%#{query}%")
+    tags = where_title_like(query)
 
     if tags.map(&:title).include?(query)
       tags
