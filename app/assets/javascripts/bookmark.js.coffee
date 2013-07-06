@@ -3,11 +3,15 @@ jQuery ->
   window.delay = (ms, func) -> setTimeout func, ms
 
   $('input#search_tags').keyup ->
-    prePopulate $(this)
+    query = $(this).val()
+    if query != ''
+      prePopulate query
+    else
+      displayTags([])
 
-  prePopulate = (parent) -> $.ajax(
+  prePopulate = (query) -> $.ajax(
     type: 'GET'
-    url: '/tags.json?query=' + parent.val()
+    url: '/tags.json?query=' + query
     success: (result) ->
       displayTags(result)
     dataType: 'json'
