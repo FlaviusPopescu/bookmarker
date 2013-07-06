@@ -16,7 +16,7 @@ input {
   font-size: 100%;
 }
 
-input[type='text'] {
+input[type='text'], input[type='password'] {
   min-width: 380px;
   margin: 6px 6px;
   border: 5px solid white;
@@ -101,7 +101,7 @@ div#main {
   border: 2px solid $aura;
 }
 
-input#create_bookmark {
+input[type='submit'].btn {
   background-color: $aura;
   position: absolute;
   width: 80px;
@@ -114,7 +114,7 @@ input#create_bookmark {
   border-bottom-right-radius: 25px;
 }
 
-input#create_bookmark:hover {
+input[type='submit'].btn:hover {
   background-color: darken($aura, 10%);
 }
 
@@ -132,4 +132,25 @@ span.remove {
   float: right;
   text-align: right;
   font-size: 80%;
+}
+
+form#sign_in {
+  width:400px;
+  height:200px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin:-100px 0 0 -200px;
+}
+
+div#sign_in {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -300px 0 0 -300px;
+  background-color: $casual;
+  border-radius: 300px;
+  border: 2px solid $aura;
 }

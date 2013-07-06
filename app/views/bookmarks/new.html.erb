@@ -7,7 +7,7 @@
     <%= text_field_tag :search_tags, nil, placeholder: 'Search or add tag.', autocomplete: 'off' %>
     <%= f.text_field :tag_tokens, type: :hidden %>
     <ul id='tag_bookmarks'></ul>
-    <%= f.submit 'Create', id: 'create_bookmark' %>
+    <%= f.submit 'Create', class: 'btn' %>
   <% end %>
 
   <div id='selected_tags'>
