@@ -2,7 +2,11 @@ class TagsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with tags.tokens(params[:query])
+    if params[:query] == ''
+      respond_with []
+    else
+      respond_with tags.tokens(params[:query])
+    end
   end
 
   private
